@@ -1,70 +1,87 @@
-# Getting Started with Create React App
+# Task Management Web App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Author
+Sebastian Londono Hurtado
 
-## Available Scripts
+## Description
+This is a React-based web application for managing personal task lists and submitting contact information. The app includes full CRUD functionality (create, read, update, delete) for tasks, filter options, and a controlled contact form.
 
-In the project directory, you can run:
+## Features
+- Create and delete tasks
+- Mark tasks as completed
+- Filter by all, completed, or incomplete tasks
+- Contact form with First Name, Last Name, Email, and Comments
+- Navigation bar for switching between pages
+- Responsive layout with side-by-side content
 
-### `npm start`
+## Live Demo
+- [Task Manager App on GitHub Pages](https://sebas421.github.io/task-manager/#/todos)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## GitHub Repository
+- [https://github.com/Sebas421/task-manager](https://github.com/Sebas421/task-manager)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## How to Use
+1. Go to the **Tasks** page to create, complete, and manage tasks.
+2. Use the filter buttons to display all, completed, or incomplete tasks.
+3. Go to the **Contact** page to fill and submit the contact form.
 
-### `npm test`
+## Technologies Used
+- React
+- JavaScript
+- HTML
+- CSS
+- GitHub Pages
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## User Stories
 
-### `npm run build`
+- Maria L, wants to keep track of her personal to-do list and be able to filter completed tasks quickly from her phone.
+- John M, a small business owner, needs to submit a support message and easily switch between contact and task views.
+- Emma T, a student, uses the app to organize daily assignments and remove tasks once completed to stay focused.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Future Improvements
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Store tasks in localStorage or use a backend API for persistence
+- Allow editing existing tasks
+- Add due dates and reminders
+- Improve the UI with animations and accessibility features
+- Validate contact form fields with inline error messages
+- Show success confirmation after form submission
+- Add login functionality so users can have private task lists
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## List Of Components
 
-### `npm run eject`
+## Container Components (hold logic and state)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- App: Root component that handles routing (/todos and /contact) and wraps the navigation bar.
+- TodoPage: Manages the list of todos, state updates, filters, and passes props to presentational components.
+- ContactPage: Wrapper component for displaying the contact form.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Presentational Components (receive props and focus on UI)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- NavBar: Displays navigation links between "Tasks" and "Contact" views.
+- TodoForm: Renders the input field and submit button to add new tasks.
+- FilterButtons: Renders the buttons to filter tasks (All, Completed, Incomplete).
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+TodoList
+Displays the list of todos using the TodoItem component.
 
-## Learn More
+TodoItem
+Displays a single todo with ability to mark as completed or delete.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+ContactForm
+Controlled component that handles the contact form fields and submission.
+## State Tree
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```js
+{
+  todos: [
+    { id: 1, text: "Example task", completed: false }
+  ],
+  filter: "all", // all | completed | incomplete
+  contactForm: {
+    firstName: "",
+    lastName: "",
+    email: "",
+    comments: ""
+  }
+}
