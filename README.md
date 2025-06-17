@@ -64,6 +64,10 @@ This is a React-based web application for managing personal task lists and submi
 ### App View 2
 ![Contact View](./w2.png)
 
+## LinkedIn Link
+
+- https://www.linkedin.com/in/sebastian-londono-hurtado-a6a364306/
+
 ## Presentational Components (receive props and focus on UI)
 
 - NavBar: Displays navigation links between "Tasks" and "Contact" views.
