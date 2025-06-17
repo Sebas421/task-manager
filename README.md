@@ -56,6 +56,14 @@ This is a React-based web application for managing personal task lists and submi
 - TodoPage: Manages the list of todos, state updates, filters, and passes props to presentational components.
 - ContactPage: Wrapper component for displaying the contact form.
 
+## Screenshots
+
+### App View 1
+![Tasks View](./w1.png)
+
+### App View 2
+![Contact View](./w2.png)
+
 ## Presentational Components (receive props and focus on UI)
 
 - NavBar: Displays navigation links between "Tasks" and "Contact" views.
@@ -85,3 +93,5 @@ Controlled component that handles the contact form fields and submission.
     comments: ""
   }
 }
+
+
